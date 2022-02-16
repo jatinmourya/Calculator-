@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #babecc;
+}
+
+h2 {
+  font-family: fantasy;
+}
+
+.box {
+  height: 600px;
+  width: 350px;
+  padding: 20px;
+  background-color: #babecc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 30px;
+  -webkit-box-shadow: -10px -10px 20px #fff9, 10px 10px 20px #0003;
+          box-shadow: -10px -10px 20px #fff9, 10px 10px 20px #0003;
+}
+
+.display {
+  width: 100%;
+}
+
+.display input {
+  text-align: right;
+  caret-color: transparent;
+  font-size: 30px;
+  height: 120px;
+  width: 100%;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #babecc;
+  -webkit-box-shadow: inset -5px -5px 15px #fff9, inset 5px 5px 15px #0003;
+          box-shadow: inset -5px -5px 15px #fff9, inset 5px 5px 15px #0003;
+}
+
+.btns {
+  margin: 50px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  grid-gap: 28px;
+}
+
+.btns input {
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #babecc;
+  -webkit-box-shadow: -5px -5px 10px #fff9, 5px 5px 10px #0003;
+          box-shadow: -5px -5px 10px #fff9, 5px 5px 10px #0003;
+}
+
+.btns .btn {
+  background: linear-gradient(145deg, #0002, #fff9);
+}
+
+.btns .btn:active {
+  background: linear-gradient(145deg, #0003, #fff9);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btns .sbtn,
+.btns #eqbtn,
+.btns #clear {
+  font-size: 30px;
+  color: #fff;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+}
+
+.btns #clear {
+  font-size: 20px;
+}
+
+.btns .sbtn:active,
+.btns #eqbtn:active,
+.btns #clear:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: linear-gradient(145deg, black, rgba(0, 0, 0, 0.6));
+}
+/*# sourceMappingURL=style.css.map */
