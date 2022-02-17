@@ -43,6 +43,9 @@ clearbtn.addEventListener('mousedown', function () {
 clearbtn.addEventListener('mouseup', function () {
   clearInterval(interval)
 })
+clearbtn.addEventListener('mouseout', function () {
+  clearInterval(interval)
+})
 
 // buttons onclick
 btns.forEach(function (btn) {
