@@ -9,31 +9,39 @@ var clearbtn = document.getElementById('clear')
 // '=' button
 var eqbtn = document.getElementById('eqbtn')
 
+
 // clearing display
 clearbtn.addEventListener('click', function () {
 
-  //  1st way to remove last digit
-  dis.value = dis.value.slice(0, -1)
+  if (dis.value != '') {
 
-  //// 2nd way to remove last digit
-  // val = ''
-  // for (i = 0; i < dis.value.length - 1; i++) {
-  //   val += dis.value[i]
-  // }
-  // dis.value = val
+    //  1st way to remove last digit
+    dis.value = dis.value.slice(0, -1)
+
+    //// 2nd way to remove last digit
+    // val = ''
+    // for (i = 0; i < dis.value.length - 1; i++) {
+    //   val += dis.value[i]
+    // }
+    // dis.value = val
+  }
+
 })
 clearbtn.addEventListener('mousedown', function () {
-  time = new Date()
-  time = time.getSeconds()
+  if (dis.value != '') {
 
-  interval = setInterval(crte, 500);
-  function crte() {
-    newt = new Date()
-    newt = newt.getSeconds()
-    diff = newt - time
-    // console.log(diff)
-    if (diff == 1) {
-      dis.value = ''
+    time = new Date()
+    time = time.getSeconds()
+
+    interval = setInterval(crte, 500);
+    function crte() {
+      newt = new Date()
+      newt = newt.getSeconds()
+      diff = newt - time
+      // console.log(diff)
+      if (diff == 1) {
+        dis.value = ''
+      }
     }
   }
 })
