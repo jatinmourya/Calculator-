@@ -26,13 +26,13 @@ clearbtn.addEventListener('mousedown', function () {
   time = new Date()
   time = time.getSeconds()
 
-  interval = setInterval(crte, 1000);
+  interval = setInterval(crte, 500);
   function crte() {
     newt = new Date()
     newt = newt.getSeconds()
     diff = newt - time
     // console.log(diff)
-    if (diff == 2) {
+    if (diff == 1) {
       dis.value = ''
     }
   }
@@ -46,7 +46,6 @@ clearbtn.addEventListener('mouseup', function () {
 clearbtn.addEventListener('mouseout', function () {
   clearInterval(interval)
 })
-
 // buttons onclick
 btns.forEach(function (btn) {
 
@@ -61,7 +60,7 @@ btns.forEach(function (btn) {
       dis.value += btn.value
     }
   })
-  
+
   btn.addEventListener('mouseup', function () {
     clearInterval(interr)
   })
@@ -73,7 +72,7 @@ btns.forEach(function (btn) {
 
 // special buttons onclick
 sbtns.forEach(function (sbtn) {
-  
+
   sbtn.addEventListener('click', addsbtn)
   function addsbtn() {
 
