@@ -22,12 +22,25 @@ function cleardisplay() {
   // dis.value = val
 }
 clearbtn.addEventListener('mousedown', function () {
-  interval = setTimeout(clearall, 2000)
-  function clearall() {
-    dis.value = ''
-  }
-})
+  time = new Date()
+  time = time.getSeconds()
 
+  interval = setInterval(crte, 1000);
+  function crte() {
+    newt = new Date()
+    newt = newt.getSeconds()
+    var diff = newt - time
+    console.log(diff)
+    if (diff == 2) {
+      dis.value = ''
+    }
+  }
+
+
+})
+clearbtn.addEventListener('mouseup', function () {
+  clearInterval(interval)
+})
 // buttons onclick
 btns.forEach(function (btn) {
   btn.addEventListener('click', addvalue)
