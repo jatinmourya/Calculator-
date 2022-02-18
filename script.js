@@ -58,6 +58,7 @@ stopclear = () => {
 clearbtn.addEventListener('mouseup', stopclear)
 clearbtn.addEventListener('mouseout', stopclear)
 clearbtn.addEventListener('touchend', stopclear)
+
 // 
 // 
 // 
@@ -85,6 +86,7 @@ btns.forEach(function (btn) {
   btn.addEventListener('mouseup', stopaddvalue)
   btn.addEventListener('mouseout', stopaddvalue)
   btn.addEventListener('touchend', stopaddvalue)
+  btn.addEventListener('touchmove', stopaddvalue)
 
 })
 // 
