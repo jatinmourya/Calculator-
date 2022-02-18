@@ -11,7 +11,7 @@ var eqbtn = document.getElementById('eqbtn')
 
 
 // clearing display
-clearbtn.addEventListener('click', function () {
+clearbtn.addEventListener('click', () => {
 
   if (dis.value != '') {
 
@@ -27,7 +27,7 @@ clearbtn.addEventListener('click', function () {
   }
 
 })
-clearbtn.addEventListener('mousedown', function () {
+clear = () => {
   if (dis.value != '') {
 
     time = new Date()
@@ -44,40 +44,54 @@ clearbtn.addEventListener('mousedown', function () {
       }
     }
   }
-})
+}
+clearbtn.addEventListener('mousedown', clear)
+clearbtn.addEventListener('touchstart', clear)
+
 
 // on mouseup it will stop setinterval 
 // that means if you mouseup before 2 seconds display value will not be cleared
-clearbtn.addEventListener('mouseup', function () {
+
+stopclear = () => {
   clearInterval(interval)
-})
-clearbtn.addEventListener('mouseout', function () {
-  clearInterval(interval)
-})
+}
+clearbtn.addEventListener('mouseup', stopclear)
+clearbtn.addEventListener('mouseout', stopclear)
+clearbtn.addEventListener('touchend', stopclear)
+// 
+// 
+// 
+// 
+// 
 // buttons onclick
 btns.forEach(function (btn) {
 
-  btn.addEventListener('click', addvalue)
-  function addvalue() {
+  btn.addEventListener('click', function () {
     dis.value += this.value
-  }
+  })
 
-  btn.addEventListener('mousedown', function () {
+  addvalue = () => {
     interr = setInterval(addvalue2, 500);
     function addvalue2() {
       dis.value += btn.value
     }
-  })
+  }
+  btn.addEventListener('mousedown', addvalue)
+  btn.addEventListener('touchstart', addvalue)
 
-  btn.addEventListener('mouseup', function () {
+  stopaddvalue = () => {
     clearInterval(interr)
-  })
+  }
+  btn.addEventListener('mouseup', stopaddvalue)
+  btn.addEventListener('mouseout', stopaddvalue)
+  btn.addEventListener('touchend', stopaddvalue)
 
-  btn.addEventListener('mouseout', function () {
-    clearInterval(interr)
-  })
 })
-
+// 
+// 
+// 
+// 
+// 
 // special buttons onclick
 sbtns.forEach(function (sbtn) {
 
@@ -93,21 +107,32 @@ sbtns.forEach(function (sbtn) {
     //   }
     // }
 
-
-
     // 2nd wat to find number at beginning ( /[0-9]/  - RE in javascript )
     if (dis.value.match(/[0-9]/)) {
-      cndtion = dis.value.slice(-1)
-
-      if (cndtion != '+' && cndtion != '-' && cndtion != '*' && cndtion != '.') {
+      cndtn = dis.value.slice(-1)
+      if (cndtn != '+' && cndtn != '-' && cndtn != '*' && cndtn != '.') {
         dis.value += this.value
       }
     }
   }
-})
 
-eqbtn.addEventListener('click', function () {
+})
+// 
+// 
+// 
+// 
+// 
+// 1st way to evaluate
+evaluate = () => {
   if (dis.value != '') {
     dis.value = eval(dis.value)
   }
-})
+}
+eqbtn.addEventListener('click', evaluate)
+
+// 2nd way to evaluate
+// eqbtn.addEventListener('click', function () {
+//   if (dis.value != '') {
+//     dis.value = eval(dis.value)
+//   }
+// })
