@@ -48,6 +48,15 @@ clear = () => {
 clearbtn.addEventListener('mousedown', clear)
 clearbtn.addEventListener('touchstart', clear)
 
+addac = () => {
+  clearbtn.value = 'C'
+
+}
+clearbtn.addEventListener('mouseup', addac)
+clearbtn.addEventListener('mouseout', addac)
+clearbtn.addEventListener('touchend', addac)
+
+
 
 // on mouseup it will stop setinterval 
 // that means if you mouseup before 2 seconds display value will not be cleared
@@ -58,7 +67,6 @@ stopclear = () => {
 clearbtn.addEventListener('mouseup', stopclear)
 clearbtn.addEventListener('mouseout', stopclear)
 clearbtn.addEventListener('touchend', stopclear)
-
 // 
 // 
 // 
